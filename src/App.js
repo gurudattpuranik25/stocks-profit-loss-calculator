@@ -35,16 +35,14 @@ function App() {
   };
 
   return (
-    <div className=" main flex justify-center flex-col gap-5 items-center">
-      <div className="container w-[24rem] gap-8 rounded-lg p-5 flex flex-col justify-center items-center">
-        <header className=" text-2xl font-semibold">
-          Stock Profit & Loss Calculator
-        </header>
-        <div className=" flex flex-col w-[90%] gap-5 ">
+    <div className=" main">
+      <div className="container">
+        <header className=" heading">Stock Profit & Loss Calculator</header>
+        <div className=" input__block ">
           <input
             type="number"
             id="initialPrice"
-            className=" p-2 rounded-lg"
+            className=" input__style"
             value={initailPrice}
             onChange={(e) => setInitailPrice(e.target.value)}
             placeholder="Enter the initial price of the stock"
@@ -52,7 +50,7 @@ function App() {
           <input
             type="number"
             id="currentPrice"
-            className=" p-2 rounded-lg"
+            className=" input__style"
             value={currentPrice}
             onChange={(e) => setCurrentPrice(e.target.value)}
             placeholder="Enter the current price of the stock"
@@ -60,27 +58,24 @@ function App() {
           <input
             type="number"
             id="stocksQuantity"
-            className=" p-2 rounded-lg"
+            className=" input__style"
             value={stocksQuantity}
             onChange={(e) => setStocksQuantity(e.target.value)}
             placeholder="Enter the quantity of the stocks bought"
           />
         </div>
         <button
-          className=" border-2 px-3 py-1 rounded-lg hover:text-white transition-all ease-in-out duration-150 border-gray-500"
+          className=" btn"
           onClick={() => calculate(initailPrice, stocksQuantity, currentPrice)}
         >
           Calculate my Profit/Loss
         </button>
-        <button
-          className=" border-2 px-3 py-1 rounded-lg hover:text-white transition-all ease-in-out duration-150 border-gray-500"
-          onClick={() => window.location.reload()}
-        >
+        <button className=" btn" onClick={() => window.location.reload()}>
           Reset
         </button>
-        <p className=" text-center text-xl">{result}</p>
+        <p className=" result">{result}</p>
       </div>
-      <div className="social-icons flex justify-center items-center gap-5 text-2xl ">
+      <div className="social__icons ">
         <p className="footer">Copyright &copy; 2022 - Gurudatt Puranik</p>
         <a href="https://twitter.com/PuranikGurudatt">
           <i className="fa-brands fa-twitter"></i>
