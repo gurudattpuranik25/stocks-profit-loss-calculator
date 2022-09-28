@@ -9,7 +9,13 @@ function App() {
 
   const calculate = (initailPrice, stocksQuantity, currentPrice) => {
     if (initailPrice === "" || stocksQuantity === "" || currentPrice === "")
-      alert("Please enter all the fields");
+      setResult("Please enter all the fields");
+    else if (
+      initailPrice <= "0" ||
+      stocksQuantity <= "0" ||
+      currentPrice <= "0"
+    )
+      setResult("Field values cannot be zero/negative");
     else {
       const pnl = (currentPrice - initailPrice) * stocksQuantity;
       const profitPercentage =
